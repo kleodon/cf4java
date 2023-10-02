@@ -1,7 +1,11 @@
 package gr.aueb.cf.ch11;
 import gr.aueb.cf.ch11.model.*;
 
-
+/**
+ * Driver class for {@link User} and {@link UserCredentials}.
+ *
+ * @author Nrigas
+ */
 public class Main {
     public static void main(String[] args) {
         long nickID = 1;

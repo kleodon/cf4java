@@ -1,5 +1,8 @@
 package gr.aueb.cf.ch11.model;
 
+/**
+ * UserCredentials class
+ */
 public class UserCredentials {
     private long id;
     private String userName;

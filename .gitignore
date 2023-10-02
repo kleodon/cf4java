@@ -180,3 +180,5 @@ replay_pid*
 #Mine
 .idea
 *.iml
+*.drawio
+*.drawio.bkp
