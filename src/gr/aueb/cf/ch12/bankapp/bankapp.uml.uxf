@@ -1,0 +1,50 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>400</x><y>0</y><w>210</w><h>190</h></coordinates><panel_attributes>AccountHolder
+--
+- id: Long
+- firstName: String
+- lastName: Stirng
+- ssn: String
+--
++  AccountHolder( id: Long, firstName: String,  lastName: Stirng, ssn: String )
++ getId(): Long
++ getFirstName(): String
++ getLastName(): String
++ getSsn(): String
++ convertToString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>230</y><w>630</w><h>270</h></coordinates><panel_attributes>OverdraftAccount
+--
+_OVERDRAFT_LIMIT:double_
+- holder: AccountHolder
+- iban: String
+- balance: double
+--
++  OverdraftAccount( id: Long, firstName: String,  lastName: Stirng, ssn: String, iban: String, balance: double )
++ OverdraftAccount (holder: AccountHolder, iban: String, balance: double )
++ getHolder():  AccountHolder
++ getIban(): String
++ getBalance(): double
++ setBalance(): double
++ convertToString(): String
++ deposit( amount: double ): void
++ withdraw( amount: double, ssn: String ): void
++ getAccountBalance: double
+- isSsnValid( ssn: String ): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>540</y><w>420</w><h>300</h></coordinates><panel_attributes>JointAccount
+--
+- holder: AccountHolder
+- iban: String
+- balance: double
+--
++ JointAccount ( holders: AccountHolder[], iban: String, balance: double )
++ JointAccount( iban: String, balance: double )
++ getHolders():  AccountHolder[]
++ getIban(): String
++ getBalance(): double
++ setBalance(): double
++ setFirstHolder( holder: AccountHolder ): void
++ setSecondHolder( holder: AccountHolder ): void
++ getFirstHolder(): AccountHolder
++ getSecondHolderr(): AccountHolder
++ convertToString(): String
++ deposit( amount: double ): void
++ withdraw( amount: double, ssn: String ): void
++ getAccountBalance: double
+- isSsnValid( ssn: String ): boolean</panel_attributes><additional_attributes></additional_attributes></element></diagram>
