@@ -1,0 +1,215 @@
+<diagram program="umletino" version="15.1"><zoom_level>4</zoom_level><element><id>UMLClass</id><coordinates><x>728</x><y>456</y><w>108</w><h>68</h></coordinates><panel_attributes>SeminarInvitation
+--
+- sender: Organizer
+- message: Message
+- type: SeminarInvitationType
+--
++ getSender(): Organizer
++ setSender( sender: Organizer ): void
++ getMessage(): Message
++ setMessage( message: Maessage ): void
++ getType(): SeminarInvitationType
++ setType( type: SeminarInvitationType ): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>468</x><y>444</y><w>192</w><h>92</h></coordinates><panel_attributes>Organizer
+--
+- user: User
+- seminars: ArrayList&lt;Seminar&gt;
+- seminarInvitations: ArrayList&lt;SeminarInvitation&gt;
+--
++ getUser(): User
++ setUser( user: User ): void
++ getAllSeminars(): ArrayList&lt;Seminar&gt;
+- getSeminars(): ArrayList&lt;Seminar&gt;
++ setSeminars( seminars: ArrayList&lt;Seminar&gt; ): void
++ getAllSeminarInvitations(): ArrayList&lt;SeminarInvitation&gt;
+- getSeminarInvitations(): ArrayList&lt;SeminarInvitation&gt;
++ setSeminarInvitations( semenarInvotations: ArrayList&lt;SeminarInvitation&gt; ): void
++ addSeminar( seminar: Seminar ): boolean
++ addSeminarInvitation( seminarInvitation: SeminarInvitation ): void
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>832</x><y>244</y><w>96</w><h>76</h></coordinates><panel_attributes>Message
+--
+- id: Long
+- title: String
+- body: String
+- seminar: Seminar
+--
++ getTitle(): String
++ setTitle( title: String ): void
++ getBody(): String
++ setBody( body: String ): void
++ getSeminar(): Seminar
++ setSeminar( semenar: Seminar ): void
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>516</x><y>252</y><w>192</w><h>92</h></coordinates><panel_attributes>Participant
+--
+- user: User
+- seminars: ArrayList&lt;Seminar&gt;
+- seminarResponses: ArrayList&lt;SeminarResponse&gt;
+--
++ getUser(): User
++ setUser( user: User ): void
+- getSeminars(): ArrayList&lt;Seminar&gt;
++ setSeminars( seminars: ArrayList&lt;Seminar&gt; ): void
++ getAllSeminars(): ArrayList&lt;Seminar&gt;
+- getSeminarResponses(): ArrayList&lt;SeminarResponse&gt;
++ setSeminarResponses( semenarResponses: ArrayList&lt;SeminarResponse&gt; ): void
++ getAllSeminarResponses(): ArrayList&lt;SeminarResponses&gt;
++ addSeminar( seminar: Seminar ): boolean
++ addSeminarResponse( seminarResponse: SeminarResponse ): void
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>356</x><y>76</y><w>144</w><h>80</h></coordinates><panel_attributes>SchedulingPeriod
+--
+- id: Long
+- timePeriod: TimePeriod
+- minutesDurations: Long
+- formattedDuration: String
+--
+&lt;&lt;constructor&gt;&gt;+SchedulingPeriod( timePeriod: TimePeriod )
++ getTimePeriod(): TimePeriod
++ setTimePeriod( timePeriod: TimePeriod ): void
++ getMinutesDuration(): Long
++ setMinutesDuration( minutesDuratuin: Long ): void
++ getFormattedDuration(): String
++ setFormattedDuration( formattedDuration: String ): void
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>624</x><y>72</y><w>156</w><h>156</h></coordinates><panel_attributes>Seminar
+--
+- id: Long
+- title: String
+- description: String
+- organizer: Organizer
+- particepants: ArrayList&lt;Participant&gt;
+- seminarRoom: SeminarRoom
+- schedulingPeriod: SchedulingPeriod
+--
++ getId(): Long
++ setId( id: Long ): void
++ getTitle(): String
++ setTitle( title: String ): void
++ getDescription(): String
++ setDescription( description: String ): void
++ getOrganizer(): Organizer
++ setOrganizer( organizer: Organizer ): void
++ getAllParticipants(): ArrayList&lt;Participant&gt;
+- getParticipants():  ArrayList&lt;Participant&gt;
++ setParticipants( participants: ArrayList&lt;Participant&gt; ): void
++ addParticipant( participant: Participant ): boolean
++ getSeminarRoom(): SeminarRoom
++ setSeminarRoom( seminarRoom: SeminarRoom ): void
++ addSeminarRoom( seminarRoom: SeminarRoom ): boolean
++ getSchedulingPeriod(): SchedulingPeriod
++ setSchedulingPeriod( schedulingPeriod: SchedulingPeriod ): void
+
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>224</x><y>408</y><w>76</w><h>36</h></coordinates><panel_attributes>Administrator
+--
+- user: User
+--
++ getUser(): User
++ setUser( user: User ): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>456</y><w>60</w><h>32</h></coordinates><panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+SeminarInvitationType
+--
+REQUEST
+FINALIZE
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>848</x><y>76</y><w>80</w><h>64</h></coordinates><panel_attributes>SeminarRoom
+--
+- id: Long
+- alias: String
+- url: String
+- seminars: ArrayList&lt;Seminar&gt;
+--
++ getId(): Long
++ setId( id: Long): void
++ getAlias(): String
++ setAlias( alias: String ): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>208</x><y>76</y><w>76</w><h>60</h></coordinates><panel_attributes>TimePeriod
+--
+- id: Long
+- start: Date
+- end: Date
+--
++ getStart(): Date
++ setStart( start: Date ): void
++ getEnd(): Date
++ setEnd( end: Date ): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>324</x><y>252</y><w>152</w><h>88</h></coordinates><panel_attributes>User
+--
+- id: Long
+- firstname: String
+- lastname: String
+- userCredentials: UserCredentials
+--
++ getId(): Long
++ setId( id: Long ): void
++ getFirstname(): String
++ setFirstname( firstname: String ): void
++ getLastname(): String
++ setLastname( lastname: String ): void
++ getUserCredentials(): UserCredentials
++ setUserCredentials( userCredentials: UserCredentials ): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>156</x><y>252</y><w>96</w><h>68</h></coordinates><panel_attributes>UserCredentials
+--
+- id: Long
+- username: String
+- password: String
+--
++ getId(): Long
++ setId( id: Long ): void
++ getUsername(): String
++ setUsername( username: String ): void
++ getPassword(): String
++ setPassword( password: String ): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>544</x><y>364</y><w>108</w><h>52</h></coordinates><panel_attributes>SeminarResponse
+--
+- sender: Participant
+- message: Message
+--
++ getSender(): Participant
++ setSender( sender: Participant ): void
++ getMessage(): Message
++ setMessage( message: Maessage ): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>104</y><w>84</w><h>20</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+&lt; contains 
+</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>496</x><y>104</y><w>136</w><h>20</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+&lt; scheduled for
+</panel_attributes><additional_attributes>320;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>776</x><y>100</y><w>80</w><h>20</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+takes place &gt;</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>248</x><y>276</y><w>84</w><h>20</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+&lt; has credentials
+</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>336</y><w>88</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+includes &gt;</panel_attributes><additional_attributes>10;180;10;110;190;110;190;10</additional_attributes></element><element><id>Relation</id><coordinates><x>408</x><y>336</y><w>68</w><h>148</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+&lt; includes </panel_attributes><additional_attributes>150;340;10;340;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>472</x><y>288</y><w>52</w><h>20</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+&lt; includes</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>492</x><y>324</y><w>60</w><h>92</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+responds with &gt;</panel_attributes><additional_attributes>130;200;10;200;10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>160</y><w>72</w><h>100</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=*
+  participates &gt;</panel_attributes><additional_attributes>10;230;10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>656</x><y>224</y><w>104</w><h>248</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+takes place &gt;</panel_attributes><additional_attributes>160;10;160;590;10;590</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>316</y><w>216</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+contains &gt;</panel_attributes><additional_attributes>10;220;510;220;510;10</additional_attributes></element><element><id>Relation</id><coordinates><x>656</x><y>480</y><w>80</w><h>20</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+sends &gt;</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>832</x><y>464</y><w>48</w><h>20</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+Has type &gt;</panel_attributes><additional_attributes>100;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>316</y><w>136</w><h>148</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+&lt; contains</panel_attributes><additional_attributes>10;350;10;270;310;270;310;10</additional_attributes></element></diagram>
